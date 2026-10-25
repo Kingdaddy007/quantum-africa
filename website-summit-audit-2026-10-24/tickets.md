@@ -134,9 +134,9 @@ Based on [STARTING.md](../STARTING.md) 11 user-specified corrections.
 **What to build:** Introduce `ui-polish.css` and `ui-polish.js` (wired into `index.html` and `build-continuation.mjs`). Implement restrained masked line entrances for primary section headings with hero-consistent easing/stagger without overriding per-section transform ownership (speaker titles, VR typography). Support motion-off / static mode.
 **Blocked by:** None
 
-- [ ] `ui-polish.css` and `ui-polish.js` created and linked in `index.html` and preserved in `build-continuation.mjs`.
-- [ ] Main section headings receive consistent masked entrance animation on scroll without clashing with speaker or VR controllers.
-- [ ] With motion-off (`.static-mode` / `prefers-reduced-motion`), headings render immediately in full opacity with zero transform lag.
+- [x] `ui-polish.css` and `ui-polish.js` created and linked in `index.html` and preserved in `build-continuation.mjs`.
+- [x] Main section headings receive consistent masked entrance animation on scroll without clashing with speaker or VR controllers.
+- [x] With motion-off (`.static-mode` / `prefers-reduced-motion`), headings render immediately in full opacity with zero transform lag.
 
 ## Ticket 2: Top-Half Numbering & Label Cleanup (Robotics, Speakers, Networking)
 **What to build:** In `index.html` and scoped styles, remove decorative section numbering and redundant eyebrow headings:
@@ -145,48 +145,48 @@ Based on [STARTING.md](../STARTING.md) 11 user-specified corrections.
 - Networking: Remove `04 / NETWORKING & PANEL SESSIONS`. Remove duplicate `01 / NETWORKING` and `02 / PANEL SESSIONS` image overlay tags; retain one unnumbered, weighted pair in lower controls.
 **Blocked by:** None
 
-- [ ] Eyebrows and decorative numbers are removed from Robotics, Speakers, and Networking.
-- [ ] Lower controls for Networking/Panels contain weighted unnumbered labels; image overlays no longer have duplicate badges.
-- [ ] Speaker cutouts maintain current scale; no portrait crops crowd adjacent text.
+- [x] Eyebrows and decorative numbers are removed from Robotics, Speakers, and Networking.
+- [x] Lower controls for Networking/Panels contain weighted unnumbered labels; image overlays no longer have duplicate badges.
+- [x] Speaker cutouts maintain current scale; no portrait crops crowd adjacent text.
 
 ## Ticket 3: Continuation Cleanup & Micro-Typography (Workshops & Partnerships)
 **What to build:** In `page-continuation.html`, remove decorative numbers (`05 / WORKSHOPS`, `06 / STRATEGIC PARTNERSHIPS`, `01` through `05` on partnership avenues). Enlarge *"TRY. ADJUST. UNDERSTAND."*. Reposition *"Different strengths. Shared possibilities."* out of the awkward overlay under the central SVG mark into a dedicated, legible caption beneath the SVG. Run `node build-continuation.mjs`.
 **Blocked by:** None
 
-- [ ] Section prefixes and ordinal markers removed from workshops and partnership avenues.
-- [ ] "TRY. ADJUST. UNDERSTAND." enlarged and legible on desktop and mobile.
-- [ ] "Different strengths. Shared possibilities." sits cleanly beneath the SVG connection map with proper spacing.
-- [ ] `node build-continuation.mjs` executes cleanly without breaking boundaries.
+- [x] Section prefixes and ordinal markers removed from workshops and partnership avenues.
+- [x] "TRY. ADJUST. UNDERSTAND." enlarged and legible on desktop and mobile.
+- [x] "Different strengths. Shared possibilities." sits cleanly beneath the SVG connection map with proper spacing.
+- [x] `node build-continuation.mjs` executes cleanly without breaking boundaries.
 
 ## Ticket 4: Smooth Native Dropdown Accordion Controller (`<details>` / `<summary>`)
 **What to build:** Implement lightweight, dependency-free measured-height WAAPI animations for all native `<details>` dropdowns (Partnership avenues, Sponsorship packages, FAQ items, and Preview disclosure). Preserve native accessibility, keyboard navigation, and instant toggle in reduced-motion mode.
 **Blocked by:** Ticket 1, Ticket 3
 
-- [ ] Opening and closing every `<details>` accordion animates smoothly without content popping or height jumps.
-- [ ] Native keyboard navigation (Enter/Space, Tab) and ARIA open states remain fully functional.
-- [ ] Reduced-motion mode toggles immediately with zero animation delay.
+- [x] Opening and closing every `<details>` accordion animates smoothly without content popping or height jumps.
+- [x] Native keyboard navigation (Enter/Space, Tab) and ARIA open states remain fully functional.
+- [x] Reduced-motion mode toggles immediately with zero animation delay.
 
 ## Ticket 5: Organiser Hierarchy & Dynamic Partner Ribbon
 **What to build:** Restructure the organiser and partner area in `page-continuation.html`. Separate Quantum Africa (with real logo mark) and TDEO Enterprises (distinct co-organiser layout). Incorporate verified Damisa brand icon (`damisa.xyz`). Convert the 4-partner list (Raytech, Avorli, Go Holdings, Damisa) into an infinite, smooth right-to-left ribbon with edge fades, pausing on hover/focus and respecting motion-off.
 **Blocked by:** Ticket 3
 
-- [ ] Quantum Africa and TDEO Enterprises display in distinct, well-proportioned organiser blocks.
-- [ ] Authentic Damisa icon is loaded locally and paired with the brand name; no invented logos.
-- [ ] Partner ribbon animates seamlessly right-to-left with gradient fade edges, pausing on hover and disabled under reduced motion.
+- [x] Quantum Africa and TDEO Enterprises display in distinct, well-proportioned organiser blocks.
+- [x] Authentic Damisa icon is loaded locally and paired with the brand name; no invented logos.
+- [x] Partner ribbon animates seamlessly right-to-left with gradient fade edges, pausing on hover and disabled under reduced motion.
 
 ## Ticket 6: VR Entertainment Headline & Auto-Scroll Sticky Reveal
 **What to build:** In `page-continuation.html`, `completion.js`, and `completion.css`, update the VR entertainment copy to headline *"VR games. / VR movies."* with clear event context. Transform the section into a sticky scroll-driven experience where scrolling smoothly transitions between VR games and VR movies with a lateral image reveal, while retaining direct clickable selectors and ordinary static fallback.
 **Blocked by:** Ticket 3
 
-- [ ] Heading explicitly reads "VR games. / VR movies." with copy detailing the on-site experience.
-- [ ] Scrolling through `#play` automatically transitions from games to movies with a cinematic image reveal.
-- [ ] Manual selector buttons still function smoothly, and static mode presents both experiences cleanly.
+- [x] Heading explicitly reads "VR games. / VR movies." with copy detailing the on-site experience.
+- [x] Scrolling through `#play` automatically transitions from games to movies with a cinematic image reveal.
+- [x] Manual selector buttons still function smoothly, and static mode presents both experiences cleanly.
 
 ## Ticket 7: Commercial Section Polish & End-to-End Verification Gate
 **What to build:** In `page-continuation.html`, clean up tickets (`#attend`) and sponsorship (`#sponsorship`) by removing decorative ordinal tags (`01/02`, `01`–`05`). Verify all published prices ($50 / $200 tickets, $50 / $100 accommodation, $2k–$100k sponsor tiers), 41 sponsorship inclusions, and contacts. Run `node build-continuation.mjs` and execute automated validation checks.
 **Blocked by:** Ticket 2, Ticket 4, Ticket 5, Ticket 6
 
-- [ ] Decorative numbers removed from admission passes and sponsor tier headers.
-- [ ] All 41 sponsor inclusions, ticket prices, and contact details match official event records without fake scarcity.
-- [ ] Full rebuild via `node build-continuation.mjs` succeeds, and page passes syntax/integrity checks on port 4360.
+- [x] Decorative numbers removed from admission passes and sponsor tier headers.
+- [x] All 41 sponsor inclusions, ticket prices, and contact details match official event records without fake scarcity.
+- [x] Full rebuild via `node build-continuation.mjs` succeeds, and page passes syntax/integrity checks on port 4360.
 

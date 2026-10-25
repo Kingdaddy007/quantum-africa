@@ -38,6 +38,28 @@ function update(){
   model.style.setProperty('--assembly-lift',Math.max(0,1-p/.55));
  }
  const mr=map.getBoundingClientRect();if(mr.bottom>0&&mr.top<innerHeight+100){const p=clamp((innerHeight-mr.top)/(innerHeight*.8));map.style.setProperty('--connection-offset',1-p);map.style.setProperty('--connection-opacity',.3+p*.7)}
+ const playSec=document.querySelector('.play-section');
+ if(playSec){
+  const pr=playSec.getBoundingClientRect();
+  if(pr.bottom>0&&pr.top<innerHeight+100){
+   const p=clamp(-pr.top/Math.max(1,playSec.offsetHeight-innerHeight));
+   const wipe=clamp((p-.35)/.30);
+   playSec.style.setProperty('--movie-wipe', ((1-wipe)*100) + '%');
+   const active=p>=.50?'movies':'games';
+   for(const button of playButtons)button.setAttribute('aria-pressed',String(button.dataset.play===active));
+  }
+ }
+ const playSec=document.querySelector('.play-section');
+ if(playSec){
+  const pr=playSec.getBoundingClientRect();
+  if(pr.bottom>0&&pr.top<innerHeight+100){
+   const p=clamp(-pr.top/Math.max(1,playSec.offsetHeight-innerHeight));
+   const wipe=clamp((p-.35)/.30);
+   playSec.style.setProperty('--movie-wipe', ((1-wipe)*100) + '%');
+   const active=p>=.50?'movies':'games';
+   for(const button of playButtons)button.setAttribute('aria-pressed',String(button.dataset.play===active));
+  }
+ }
  const remaining=document.querySelector('main').getBoundingClientRect().bottom;
  const reveal=clamp((innerHeight-remaining)/Math.max(1,footer.offsetHeight));footer.style.setProperty('--footer-shift',`${(1-reveal)*-45}px`);
 }
@@ -51,9 +73,26 @@ for(const button of modes)button.addEventListener('click',()=>{
 const playButtons=[...document.querySelectorAll('[data-play]')],playScenes=[...document.querySelectorAll('[data-play-scene]')];
 function selectPlay(which){
  for(const button of playButtons)button.setAttribute('aria-pressed',String(button.dataset.play===which));
- for(const scene of playScenes){const active=isStatic()||scene.dataset.playScene===which;scene.classList.toggle('is-selected',scene.dataset.playScene===which);scene.setAttribute('aria-hidden',String(!active));scene.inert=!active}
+ for(const scene of playScenes){
+  const active=isStatic()||scene.dataset.playScene===which;
+  scene.classList.toggle('is-selected',scene.dataset.playScene===which);
+  scene.setAttribute('aria-hidden',String(!active));
+  scene.inert=!active;
+ }
+ const playSec=document.querySelector('.play-section');
+ if(playSec){
+  playSec.style.setProperty('--movie-wipe',which==='movies'?'0%':'100%');
+ }
 }
-for(const button of playButtons)button.addEventListener('click',()=>selectPlay(button.dataset.play));
+for(const button of playButtons)button.addEventListener('click',()=>{
+ const which=button.dataset.play;
+ selectPlay(which);
+ if(isStatic())return;
+ const playSec=document.querySelector('.play-section');
+ if(!playSec)return;
+ const p=which==='movies'?.75:.20;
+ scrollTo({top:scrollY+playSec.getBoundingClientRect().top+(playSec.offsetHeight-innerHeight)*p,behavior:'smooth'});
+});
 // New chapter links align from the actual layout and leave keyboard focus at
 // the destination. This also avoids focus scrolling a pinned source stage.
 document.addEventListener('click',event=>{

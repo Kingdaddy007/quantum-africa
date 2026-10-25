@@ -17,7 +17,7 @@
 .conversation-copy-panel{opacity:var(--panel-copy,0);visibility:var(--panel-visible,hidden);transform:translateY(var(--panel-y,15px))}
 .conversation-controls{position:absolute;left:var(--gutter);right:var(--gutter);bottom:72px;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:25px}
 .conversation-switches{display:flex;gap:24px}
-.conversation-switches button{min-height:44px;padding:8px 0;background:none;border:0;border-bottom:1px solid #a9c6d14d;color:#9db4c1;font:inherit;font-size:10px;cursor:pointer;letter-spacing:.03em}
+.conversation-switches button{min-height:44px;padding:8px 0;background:none;border:0;border-bottom:1px solid #a9c6d14d;color:#9db4c1;font:inherit;font-size:11px;font-weight:700;letter-spacing:.05em;cursor:pointer}
 .conversation-switches button[aria-pressed=true]{color:var(--cyan);border-color:var(--cyan)}
 .conversation-switches button span{margin-right:10px;font-variant-numeric:tabular-nums}
 .conversation-controls a{display:flex;align-items:center;justify-content:space-between;gap:25px;min-height:44px;font-size:11px;border-bottom:1px solid #a9c6d177}
