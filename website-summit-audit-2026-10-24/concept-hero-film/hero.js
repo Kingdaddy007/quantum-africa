@@ -11,21 +11,22 @@ function showTitle(){body.classList.remove('hero-ready');void hero.offsetWidth;b
 function updateFilmControl(){const playing=!video.paused&&!video.ended;filmControl.textContent=playing?'Ⅱ':'▷';filmControl.setAttribute('aria-label',playing?'Pause background film':'Play background film')}
 async function playFilm(){if(videoFailed||introActive||isStatic()||!heroVisible||filmPausedByUser||document.hidden){video.pause();return}try{await video.play();if(introActive||isStatic()||!heroVisible||filmPausedByUser||document.hidden)video.pause();else poster.hidden=true}catch{if(!introActive&&!isStatic()&&heroVisible&&!filmPausedByUser&&!document.hidden)poster.hidden=false}updateFilmControl()}
 function syncFilm(){if(isStatic()){poster.hidden=false;video.pause();filmControl.hidden=true}else{poster.hidden=videoFailed;filmControl.hidden=videoFailed;void playFilm()}}
-function finishIntro(){cancelAnimationFrame(introFrame);introActive=false;opening.hidden=true;body.classList.remove('intro-playing');rememberArrival();if(!body.classList.contains('hero-ready'))showTitle();void playFilm()}
+function finishIntro(){cancelAnimationFrame(introFrame);introActive=false;opening.hidden=true;opening.style.display='none';opening.classList.remove('aperture-active');body.classList.remove('intro-playing');rememberArrival();if(!body.classList.contains('hero-ready'))showTitle();void playFilm()}
 function drawIntro(now){if(!introActive)return;const t=(now-introStart)/1000,w=innerWidth,h=innerHeight;
   const base=Math.min(w<=760?.7:.85,h/650),p=smooth(ramp(t,1.05,2.2));
   // The centre of the original bitmap lies inside the central blade. Its
   // 20px minimum distance to the blade edge determines full viewport cover.
   const cover=Math.hypot(w,h)/38+2,scale=base*Math.exp(Math.log(cover/base)*p);
   const transform=`translate(${w/2-256*scale} ${h*.44-256*scale}) scale(${scale})`;
-  aperture.setAttribute('transform',transform);mark.style.width='512px';mark.style.height='512px';mark.style.transform=`translate(${w/2-256*base}px,${h*.44-256*base}px) scale(${base})`;
+  aperture.setAttribute('transform',transform);mark.style.width='512px';mark.style.height='512px';mark.style.left='0';mark.style.top='0';mark.style.transform=`translate(${w/2-256*base}px,${h*.44-256*base}px) scale(${base})`;
   mark.style.setProperty('--mark-reveal',`${(1-smooth(ramp(t,0,.65)))*100}%`);mark.style.opacity=String(1-ramp(t,.96,1.2));name.style.opacity=String(smooth(ramp(t,.2,.65))*(1-ramp(t,.95,1.18)));
+  if(t>=1.02)opening.classList.add('aperture-active');
   if(t>1.48&&!body.classList.contains('hero-ready'))showTitle();
   if(t>=2.25){finishIntro();return}introFrame=requestAnimationFrame(drawIntro);
 }
-function beginIntro(reason='replay'){cancelAnimationFrame(introFrame);if(isStatic()){finishIntro();return}opening.dataset.entry=reason;body.classList.remove('hero-ready');body.classList.add('intro-playing');introActive=true;opening.hidden=false;introStart=performance.now();video.pause();introFrame=requestAnimationFrame(drawIntro)}
+function beginIntro(reason='replay'){cancelAnimationFrame(introFrame);if(isStatic()){finishIntro();return}document.documentElement.classList.remove('skip-intro');opening.dataset.entry=reason;opening.classList.remove('aperture-active');body.classList.remove('hero-ready');body.classList.add('intro-playing');introActive=true;opening.hidden=false;opening.style.display='';introStart=performance.now();video.pause();introFrame=requestAnimationFrame(drawIntro)}
 document.querySelector('#skip-opening').addEventListener('click',finishIntro);
-document.querySelector('#replay').addEventListener('click',()=>{window.scrollTo({top:0,behavior:'instant'});history.replaceState(null,'',location.pathname+location.search);filmPausedByUser=false;try{video.currentTime=0}catch{}beginIntro()});
+document.querySelector('#replay').addEventListener('click',()=>{document.documentElement.classList.remove('skip-intro');window.scrollTo({top:0,behavior:'instant'});history.replaceState(null,'',location.pathname+location.search);filmPausedByUser=false;try{video.currentTime=0}catch{}beginIntro('replay')});
 document.querySelector('.skip').addEventListener('click',()=>{finishIntro();hero.scrollIntoView({behavior:'instant'})});
 document.querySelector('.header-attend').addEventListener('click',()=>finishIntro());
 addEventListener('keydown',e=>{if(e.key==='Escape'&&introActive)finishIntro()});addEventListener('scroll',()=>{if(introActive&&scrollY>30)finishIntro()},{passive:true});
@@ -36,7 +37,7 @@ new MutationObserver(()=>{if(isStatic()&&introActive)finishIntro();syncFilm()}).
 addEventListener('visibilitychange',syncFilm);video.addEventListener('error',()=>{videoFailed=true;syncFilm()});video.querySelector('source').addEventListener('error',()=>{videoFailed=true;syncFilm()});
 // No startup loader: the semantic hero is already present. Only a fresh,
 // normal-motion visit receives the short automatic branded opening.
-if(!location.hash&&!hasArrived()&&!isStatic())beginIntro('automatic');else{opening.dataset.entry=isStatic()?'static':'repeat-or-anchor';opening.hidden=true;body.classList.add('hero-ready');syncFilm()}
+if(!location.hash&&!isStatic())beginIntro('automatic');else{opening.dataset.entry=isStatic()?'static':'repeat-or-anchor';opening.hidden=true;opening.style.display='none';body.classList.add('hero-ready');syncFilm()}
 const initialAnchor=location.hash;
 // Browser scroll restoration can otherwise override a deep link after the
 // static document becomes the pinned layout. Align once the page has settled.

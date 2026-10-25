@@ -9,8 +9,9 @@
   <script type="module" src="headset.js"></script><script type="module" src="hero.js"></script><script type="module" src="chapter-motion.js"></script><script type="module" src="vr-film.js"></script><script type="module" src="conversation.js"></script><script type="module" src="countdown.js"></script><script type="module" src="conversation-room.js"></script>
   <link rel="stylesheet" href="completion.css"><script type="module" src="completion.js"></script>
   <link rel="stylesheet" href="ui-polish.css"><script type="module" src="ui-polish.js"></script>
+  <script>try{if(location.hash||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)){document.documentElement.classList.add('skip-intro');}}catch(e){}</script>
 </head>
-<body class="static-mode">
+<body class="intro-playing">
 <a class="skip" href="#hero">Skip opening</a>
 <header class="study-tools">
   <a class="small-brand" href="#hero" aria-label="Quantum Africa Summit"><img src="assets/brand/mark-trimmed.png" alt=""><span>QUANTUM AFRICA<span class="brand-year">SUMMIT 2026</span></span></a>
@@ -183,7 +184,7 @@
 </main>
 <footer class="summit-footer" id="closing" aria-labelledby="closing-title"><div class="footer-inner"><p class="eyebrow">A NEW PERSPECTIVE. IN PERSON.</p><h2 id="closing-title"><span>QUANTUM</span><span>AFRICA<span class="footer-period">.</span></span></h2><div class="footer-invitation"><p>SUMMIT 2026<br><span>28 November · 11:00 AM WAT · Lagos, Nigeria</span></p><a class="button" href="https://selar.com/8q9g299h98" target="_blank" rel="noopener noreferrer">Join the Summit <span aria-hidden="true">↗</span></a></div><nav aria-label="Footer"><a href="#workshops">The experience</a><a href="#attend">Tickets</a><a href="#partnerships">Partnerships</a><a href="#questions">Questions</a><a href="#hero">Back to top ↑</a></nav><div class="footer-bottom"><p><img src="assets/brand/mark-trimmed.png" width="18" height="29" alt="">Powered by Quantum Africa.</p><p>© 2026 Quantum Africa · Private concept</p></div></div></footer>
 
-<div class="brand-opening" id="brand-opening" hidden aria-hidden="true">
+<div class="brand-opening" id="brand-opening" aria-hidden="true">
   <svg class="opening-surface" id="opening-surface" width="100%" height="100%" aria-hidden="true">
     <defs><filter id="silhouette" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"/></filter>
       <mask id="logo-aperture" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" style="mask-type:luminance"><rect id="mask-field" width="100%" height="100%" fill="white"/><image id="aperture-mark" href="assets/brand/quantum-africa-original.png" width="512" height="512" filter="url(#silhouette)"/></mask>
