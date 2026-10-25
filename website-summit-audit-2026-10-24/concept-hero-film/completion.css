@@ -97,6 +97,15 @@ details[open]>summary>b{transform:rotate(45deg)}
 body.motion-off .partner-track {
   animation: none !important;
 }
+.static-mode .partner-marquee,
+body.motion-off .partner-marquee {
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+.static-mode .play-scene[data-play-scene="movies"],
+body.motion-off .play-scene[data-play-scene="movies"] {
+  clip-path: none !important;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .partner-track { animation: none !important; }
