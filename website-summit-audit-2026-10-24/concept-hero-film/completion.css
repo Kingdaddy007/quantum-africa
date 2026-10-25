@@ -94,9 +94,12 @@ details[open]>summary>b{transform:rotate(45deg)}
 @media(prefers-reduced-motion:reduce){.play-scene{transition:none}.summit-footer{position:relative}.footer-inner{transform:none}.connection-paths path{stroke-dashoffset:0}.map-node{opacity:1}}
 
 .static-mode .partner-track,
-body.motion-off .partner-track,
-@media(prefers-reduced-motion:reduce){
-  .partner-track{animation:none!important}
-  .partner-marquee{-webkit-mask-image:none!important;mask-image:none!important}
-  .play-scene[data-play-scene="movies"]{clip-path:none!important}
+body.motion-off .partner-track {
+  animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partner-track { animation: none !important; }
+  .partner-marquee { -webkit-mask-image: none !important; mask-image: none !important; }
+  .play-scene[data-play-scene="movies"] { clip-path: none !important; }
 }
