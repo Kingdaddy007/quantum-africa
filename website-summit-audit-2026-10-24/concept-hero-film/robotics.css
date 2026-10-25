@@ -1,0 +1,53 @@
+.vr-phrases{height:210px;position:relative;margin-top:20px}.vr-phrases h2{position:absolute;inset:0 auto auto 0;margin:0;opacity:var(--vr-copy-a,1);visibility:var(--vr-copy-a-visible,visible);transform:translateY(var(--vr-copy-a-y,0px));max-width:100%}.vr-phrases .vr-phrase-second{opacity:var(--vr-copy-b,0);visibility:var(--vr-copy-b-visible,hidden);transform:translateY(var(--vr-copy-b-y,15px))}.inside-copy .text-button{margin-top:14px}.robot-chapter{height:245svh;position:relative;background:#080d13}.robot-stage{height:100svh;min-height:700px;position:sticky;top:0;overflow:hidden;isolation:isolate;transform:translateZ(0)}.robot-photo{position:absolute;inset:0;z-index:0;clip-path:inset(var(--robot-crop-top,43%) 0 var(--robot-crop-bottom,35%) 0);background:#080d13}.robot-photo img{width:100%;height:100%;object-fit:cover;object-position:72% 30%;transform-origin:72% 30%;transform:translateY(var(--robot-image-y,14vh)) scale(var(--robot-scale,2.1));filter:brightness(var(--robot-exposure,.55));will-change:transform}.robot-light{position:absolute;inset:0;background:linear-gradient(90deg,#080d13ec 0%,#080d1377 35%,transparent 70%),linear-gradient(0deg,#080d13fa 0%,#080d13a6 18%,transparent 55%,#080d1366 100%)}.robot-intro{position:absolute;left:var(--gutter);right:var(--gutter);top:132px;z-index:2;opacity:var(--robot-intro-opacity,1);visibility:var(--robot-intro-visible,visible);transform:translateY(var(--robot-intro-y,0px))}.robot-intro h2{font-size:clamp(56px,7.7vw,112px);font-weight:800;letter-spacing:-.045em;margin:24px 0}.robot-intro h2>span{color:var(--cyan)}.robot-intro>p:not(.eyebrow){font-size:15px;line-height:1.6;color:#c9d8df}.robot-intro .text-button{margin-top:24px}.robot-context{position:absolute;left:var(--gutter);right:var(--gutter);top:125px;z-index:3;opacity:var(--robot-context-opacity,0);visibility:var(--robot-context-visible,hidden);transform:translateY(var(--robot-context-y,18px))}.robot-context h2{font-size:clamp(52px,6.5vw,94px);font-weight:800;margin-top:22px;max-width:500px}.robot-context .eyebrow{color:var(--cyan)}.robot-takeaway{position:absolute;left:var(--gutter);right:var(--gutter);bottom:82px;z-index:3;opacity:var(--robot-context-opacity,0);visibility:var(--robot-context-visible,hidden);max-width:640px}.robot-takeaway>p{font-size:17px;color:#e0eaf0}.robot-formats{display:flex;flex-wrap:wrap;gap:12px 25px;border-top:1px solid #b9d6df44;margin-top:22px;padding-top:16px;font-size:10px;color:#a9c0cc}.robot-takeaway .text-button{margin-top:18px}.robot-credit,.robot-phase{position:absolute;bottom:23px;left:var(--gutter);font-size:8px;color:#a1b8c5;z-index:4}.robot-phase{left:auto;right:var(--gutter);letter-spacing:.06em}.attend-invitation{padding:120px var(--gutter) 105px;min-height:80svh;background:#0c1721;color:#eff3f5;position:relative}.attend-invitation h2{font-size:clamp(64px,8.2vw,120px);line-height:1.02;font-weight:800;margin:32px 0}.attend-facts{font-size:17px;color:#d5e1e7}.attend-venue{font-size:11px;color:#a2bac8;margin-top:12px}.attend-invitation .button{margin-top:35px}.attend-invitation .powered{font-size:11px;color:#a2bac8;margin-top:25px}.static-mode .vr-phrases{height:auto}.static-mode .vr-phrases h2{position:relative;opacity:1;visibility:visible;transform:none}.static-mode .vr-phrases .vr-phrase-second{display:none}.robot-chapter.is-static{height:auto}.is-static .robot-stage{position:relative;height:auto;min-height:0;padding:110px 0 70px}.is-static .robot-intro{position:relative;top:auto;left:auto;right:auto;margin:0 var(--gutter) 45px;opacity:1;visibility:visible;transform:none}.is-static .robot-intro #reveal-robot{display:none}.is-static .robot-photo{position:relative;height:80svh;min-height:500px;clip-path:none}.is-static .robot-photo img{transform:none;filter:none}.is-static .robot-context{position:relative;top:auto;left:auto;right:auto;margin:45px var(--gutter) 30px;opacity:1;visibility:visible;transform:none}.is-static .robot-takeaway{position:relative;left:auto;right:auto;bottom:auto;margin:0 var(--gutter) 35px;opacity:1;visibility:visible}.is-static .robot-phase{display:none}.robot-unavailable .robot-photo{display:none}
+@media(min-width:761px){.robot-photo{left:29%}.robot-photo img{object-position:70% 32%}.robot-light{background:linear-gradient(90deg,#080d13 0%,#080d1388 25%,transparent 70%),linear-gradient(0deg,#080d13ee 0%,#080d1344 24%,transparent 65%)}.is-static .robot-photo{left:0}}
+@media(max-width:760px){.vr-phrases{height:115px;margin-top:18px}.vr-phrases h2{font-size:43px}.inside-copy .text-button{margin-top:14px}.robot-stage{min-height:690px}.robot-intro{top:112px}.robot-intro .eyebrow{font-size:7px;letter-spacing:.06em}.robot-intro h2{font-size:49px;line-height:1.02;margin:22px 0}.robot-intro>p:not(.eyebrow){font-size:12px}.robot-intro .text-button{font-size:10px;margin-top:18px}.robot-photo img{object-position:61% 30%;transform-origin:72% 30%}.robot-light{background:linear-gradient(0deg,#080d13f7 0%,#080d13bb 17%,transparent 45%,#080d1366 70%,#080d13cc 100%)}.robot-context{top:110px}.robot-context h2{font-size:43px;line-height:1.04;max-width:230px;margin-top:19px}.robot-context .eyebrow{font-size:7px}.robot-takeaway{bottom:76px;max-width:none}.robot-takeaway>p{font-size:12px;line-height:1.65}.robot-formats{font-size:8px;gap:10px 16px;margin-top:17px;padding-top:13px}.robot-takeaway .text-button{font-size:10px;margin-top:15px}.robot-credit{bottom:18px;font-size:6.5px;max-width:230px}.robot-phase{display:none}.attend-invitation{padding:88px var(--gutter) 75px;min-height:76svh}.attend-invitation h2{font-size:54px;margin:26px 0}.attend-facts{font-size:14px}.attend-venue{font-size:10px}.attend-invitation .button{width:100%;font-size:11px;margin-top:28px}.attend-invitation .powered{font-size:10px}.is-static .robot-stage{padding-top:112px}.is-static .robot-photo{height:75svh;min-height:500px}.is-static .robot-context{margin-top:35px}.is-static .robot-takeaway{margin-bottom:30px}}
+@media(max-width:370px){.vr-phrases h2{font-size:40px}.robot-intro h2{font-size:45px}.robot-context h2{font-size:40px}.attend-invitation h2{font-size:48px}}
+@media(max-height:750px) and (max-width:760px){.vr-phrases{height:103px}.vr-phrases h2{font-size:38px}.robot-stage{min-height:660px}.robot-intro,.robot-context{top:101px}.robot-intro h2{font-size:43px;margin:18px 0}.robot-intro>p:not(.eyebrow){font-size:10px}.robot-context h2{font-size:38px}.robot-takeaway{bottom:68px}.robot-takeaway>p{font-size:10px}.robot-formats{font-size:7px;margin-top:12px;padding-top:10px}}
+
+/* Hold a recognisable visor close-up before the same frame opens to its people. */
+.robot-chapter{height:300svh}
+.robot-photo{left:0;clip-path:inset(var(--robot-crop-top,35%) var(--robot-crop-side,4%) var(--robot-crop-bottom,12%) var(--robot-crop-side,4%))}
+.robot-photo img{position:absolute;width:var(--robot-photo-width,100%);height:var(--robot-photo-height,100%);max-width:none;object-fit:fill;transform-origin:0 0;transform:translate(var(--robot-image-x,0px),var(--robot-image-y,0px)) scale(var(--robot-scale,1));filter:brightness(var(--robot-exposure,.86))}
+.robot-light{background:linear-gradient(0deg,#080d13f5 0%,#080d1355 22%,transparent 48%,#080d1322 75%,#080d1377 100%)}
+.robot-intro .text-button{position:absolute;top:calc(100svh - 250px);left:0;margin-top:0}
+.robot-context,.robot-intro{pointer-events:none}
+.robot-intro .text-button{pointer-events:auto}
+.robot-chapter.is-static{height:auto}
+.is-static .robot-photo{clip-path:none}
+.is-static .robot-photo img{position:relative;width:100%;height:100%;object-fit:cover;object-position:60% 50%;transform:none}
+@media(min-width:761px){.robot-light{background:linear-gradient(90deg,#080d13ed,transparent 64%),linear-gradient(0deg,#080d13ee,transparent 58%)}.robot-intro .text-button{top:calc(100svh - 235px)}}
+@media(max-width:760px){.robot-intro>p:not(.eyebrow){max-width:180px}.robot-intro .text-button{top:calc(100svh - 225px)}}
+
+/* Correction: a real articulated object first; the entire photograph is the
+   subsequent See it / Question it scene. One unframed stage connects them. */
+.robot-chapter{height:430svh}
+.robot-stage{background:#080d13;overflow:clip}
+.robot-model{position:absolute;left:46%;right:-2%;top:5%;bottom:4%;z-index:2;opacity:var(--robot-model-opacity,1);pointer-events:none}
+#robot-canvas{display:block;width:100%;height:100%}
+.robot-photo{clip-path:none;opacity:var(--robot-photo-opacity,0);pointer-events:none}
+.robot-light{background:linear-gradient(90deg,#080d13ed,transparent 68%),linear-gradient(0deg,#080d13f2,transparent 42%)}
+.robot-intro{z-index:5}
+.robot-intro h2{font-size:clamp(56px,6.8vw,100px)}
+.robot-context{z-index:5}
+.robot-takeaway{opacity:var(--robot-takeaway-opacity,0);visibility:var(--robot-takeaway-visible,hidden)}
+.robot-model-message{position:absolute;left:var(--gutter);right:var(--gutter);bottom:130px;z-index:7;max-width:310px;color:var(--silver);font-size:12px;line-height:1.7}
+.model-unavailable .robot-model{display:none}
+.robot-chapter.is-static{height:auto}
+.is-static .robot-intro{margin-bottom:0}
+.is-static .robot-model{position:relative;inset:auto;width:100%;height:70svh;min-height:460px;opacity:1;margin:0 auto 35px}
+.is-static .robot-photo{opacity:1}
+.is-static .robot-context,.is-static .robot-takeaway{opacity:1;visibility:visible}
+.is-static .robot-model-message{position:relative;inset:auto;margin:25px var(--gutter)}
+@media(max-width:760px){
+ .robot-model{left:-7%;right:-7%;top:24%;bottom:5%}
+ .robot-intro h2{font-size:49px;max-width:310px;line-height:1.03}
+ .robot-intro .text-button{top:calc(100svh - 225px)}
+ .robot-light{background:linear-gradient(0deg,#080d13ef,transparent 42%,transparent 62%,#080d13d9)}
+ .robot-context h2{font-size:43px}
+ .is-static .robot-model{width:100%;height:65svh;min-height:420px}
+}
+@media(max-height:750px) and (max-width:760px){.robot-intro h2{font-size:43px}.robot-context h2{font-size:38px}.robot-model{top:24%;bottom:4%}}
+
+/* Desktop keeps the mobile's immersive photo/type overlay, with a wider crop
+   rather than an opaque text column next to a separate portrait. */
+@media(min-width:761px){.robot-light{background:linear-gradient(90deg,#080d1399 0%,#080d1322 48%,transparent 85%),linear-gradient(0deg,#080d13e8,transparent 42%),linear-gradient(180deg,#080d1366,transparent 55%)}}

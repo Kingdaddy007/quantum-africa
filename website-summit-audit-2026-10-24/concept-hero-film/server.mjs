@@ -1,0 +1,7 @@
+import http from 'node:http';
+import {readFile,stat} from 'node:fs/promises';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const base=path.dirname(fileURLToPath(import.meta.url));
+const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.svg':'image/svg+xml','.jpg':'image/jpeg','.png':'image/png','.mp4':'video/mp4','.ttf':'font/ttf','.md':'text/plain; charset=utf-8'};
+http.createServer(async(req,res)=>{try{const name=decodeURIComponent(new URL(req.url,'http://localhost').pathname),file=path.resolve(base,'.'+(name==='/'?'/index.html':name));if(!file.startsWith(base+path.sep)){res.writeHead(403).end();return}if(!(await stat(file)).isFile()){res.writeHead(404).end();return}const data=await readFile(file),range=req.headers.range;if(range&&file.endsWith('.mp4')){const match=/^bytes=(\d+)-(\d*)$/.exec(range);if(!match){res.writeHead(416).end();return}const start=+match[1],end=match[2]?Math.min(+match[2],data.length-1):data.length-1;if(start>end){res.writeHead(416).end();return}res.writeHead(206,{'Content-Type':'video/mp4','Accept-Ranges':'bytes','Content-Range':`bytes ${start}-${end}/${data.length}`,'Content-Length':end-start+1});res.end(data.subarray(start,end+1));return}res.writeHead(200,{'Content-Type':mime[path.extname(file)]||'application/octet-stream','Content-Length':data.length,'Cache-Control':'no-store'});res.end(data)}catch{res.writeHead(404).end('Not found')}}).listen(4360,'127.0.0.1',()=>console.log('Hero film: http://127.0.0.1:4360/'));

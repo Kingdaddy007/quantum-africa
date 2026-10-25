@@ -1,0 +1,74 @@
+{
+  "result": "pass",
+  "uniqueIds": 66,
+  "checkedLocalReferences": 42,
+  "requiredDestinations": [
+    "hero",
+    "event-time",
+    "top",
+    "robotics",
+    "voices",
+    "conversation",
+    "possibilities",
+    "workshops",
+    "partnerships",
+    "play",
+    "attend",
+    "tickets",
+    "sponsorship",
+    "questions",
+    "contact",
+    "closing"
+  ],
+  "speakerFigures": 7,
+  "partnerAvenues": 5,
+  "sponsorPackages": [
+    {
+      "name": "Essential",
+      "price": "$2,000",
+      "benefits": 8,
+      "equity": [
+        "0.02%"
+      ]
+    },
+    {
+      "name": "Premium",
+      "price": "$5,000",
+      "benefits": 8,
+      "equity": [
+        "0.25%"
+      ]
+    },
+    {
+      "name": "Elite",
+      "price": "$10,000",
+      "benefits": 8,
+      "equity": [
+        "0.1%"
+      ]
+    },
+    {
+      "name": "Distinguished",
+      "price": "$50,000",
+      "benefits": 8,
+      "equity": [
+        "0.5%"
+      ]
+    },
+    {
+      "name": "Royalty",
+      "price": "$100,000",
+      "benefits": 9,
+      "equity": [
+        "1%"
+      ]
+    }
+  ],
+  "faqCount": 5,
+  "detailsTotal": 16,
+  "builderIdempotent": true,
+  "acceptedPrefixSha256": "30ad4b3f3d935893c41cad8b01dab29bb342ba7e1649c462212628d1be5c672e",
+  "openingSha256": "34427f6dd7f6190597f8cb91e083768020d9d8ae7a68db00842d1c17e93c80b2",
+  "javascriptSyntaxFiles": 7,
+  "externalActionsPerformed": false
+}

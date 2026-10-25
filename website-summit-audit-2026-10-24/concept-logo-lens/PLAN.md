@@ -1,0 +1,13 @@
+# Logo to Lens — R2 production contract
+
+25 October 2026. This revision replaces the timed R1 entrance with three distinct moments. Authorized scope remains the opening, full-screen hero and first VR chapter. No rest-of-site build, publishing, installs or paid generation. Source art belongs to the director; implementation copies and all edits belong only to this directory. R1 source/notes are preserved under archive/r1/.
+
+1. Real logo: seven clipped portions of the original silver PNG assemble over about 1.2s, then remain assembled indefinitely. A 68svh native scroll span unfolds the facets and uncovers a matched hero preview. Enter, Skip or Escape advance to the hero; Replay returns to zero and replays assembly. The arrival and scroll transforms have separate wrappers. The preview stays opaque to prevent duplicate scene/type ghosts during handoff. No automatic dismissal.
+2. Hero: a separate 160svh section with a 100svh sticky stage. Its own masked title lines animate only after the logo handoff (0.95s, 0/.12/.24s staggering). The full event identity, grouped date/time/city and attendance action retain an additional 60svh of reading hold. New gathering stills have distinct portrait/landscape compositions. No title is placed over the silver sculpture.
+3. VR: a separate 300svh chapter with a 100svh stage. The opening eye-shaped clip has a thin glass lip, independently offset foreground edge and limited FOV-like crop. Native video uses the same poster/clip geometry. Progress .00–.12 holds the introduction; .16–.43 opens the eye; .44–.77 seeks the 5s interior; .77–.84 holds; .84–.97 closes the eye; .90–1 resolves the exit. Explicit Play gives ordinary timed playback; further scrolling pauses it and returns to the mapped frame. No looping or offscreen playback.
+
+The native five-second source is the staged illustrative property.mp4. A local all-intra H264 derivative makes seeking easy to inspect; 120 frames, 24fps, 720x1280, no audio, 8,246,633 bytes. Poster is the first encoded frame of this derivative. The source room/skyline is illustrative and not geographically verified. It is never crossfaded from the unrelated cool R1 room as though one camera moved between them.
+
+Reduced motion, motion off and no-JS: intro is bypassed, full hero is readable, VR intro/media/caption/exit are ordinary document flow. Native video controls permit optional user playback. All event actions and copy remain available. Media failure uses the exact same-room poster.
+
+Checks: actual iab viewports390x844,360x740 and desktop; logo hold, Enter/keyboard/skip/replay, scroll reversal, hero hold, actual native time/frame seeking, Play/scroll-to-pause, eye exit, static/reduced/no-JS and video failure. No production performance or physical-phone claim.

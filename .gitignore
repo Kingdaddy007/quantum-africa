@@ -1,0 +1,31 @@
+motion-v2/node_modules/
+motion-v2/out/
+motion-v2/.remotion/
+hyperframes-launch/node_modules/
+hyperframes-launch/renders/
+hyperframes-launch/.hyperframes/
+hyperframes-launch/snapshots/
+.agents/research-repos/
+
+# Laptop transfer: omit rebuildable dependencies and local credentials.
+**/node_modules/
+**/.venv/
+**/venv/
+**/__pycache__/
+**/.tools/
+.env
+.env.*
+!.env.example
+*.key
+*.p12
+*.pfx
+*service-account*.json
+
+# Only the two current website delivery videos travel to GitHub.
+*.mp4
+*.mov
+*.m4v
+*.webm
+*.avi
+!website-summit-audit-2026-10-24/concept-hero-film/assets/hero-film.mp4
+!website-summit-audit-2026-10-24/concept-hero-film/assets/vr-courtyard-web.mp4
