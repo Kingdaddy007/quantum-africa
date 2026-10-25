@@ -6,7 +6,7 @@ main{position:relative;z-index:2;background:var(--ink)}
 .tail-text-link{display:inline-flex;align-items:center;justify-content:space-between;gap:35px;min-height:48px;font-size:12px;border-bottom:1px solid currentColor}
 .tail-text-link span{font-size:20px}.tail-section a:focus-visible,.summit-footer a:focus-visible{outline:2px solid currentColor;outline-offset:5px}
 .tail-section summary:focus-visible{outline:2px solid currentColor;outline-offset:4px}
-.workshop-chapter{height:240svh;position:relative;background:#101b27;isolation:isolate}
+.workshop-chapter{height:175svh;position:relative;background:#101b27;isolation:isolate}
 .workshop-stage{height:100svh;min-height:710px;position:sticky;top:0;overflow:clip;background:radial-gradient(ellipse at 70% 54%,#244053,#111e2d 48%,#0a1520 85%);isolation:isolate}
 .workshop-heading{position:absolute;z-index:5;left:var(--gutter);top:125px;pointer-events:none}
 .workshop-heading .eyebrow{color:var(--cyan)}.workshop-heading h2{font-size:clamp(58px,6.7vw,98px);font-weight:800;line-height:1.01;letter-spacing:-.05em;margin:25px 0 24px}

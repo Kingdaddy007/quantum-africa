@@ -1,4 +1,4 @@
-.conversation-chapter{position:relative;height:270svh;background:#09151e;isolation:isolate}
+.conversation-chapter{position:relative;height:185svh;background:#09151e;isolation:isolate}
 .conversation-stage{position:sticky;top:0;height:100svh;min-height:690px;overflow:clip;background:#09151e;isolation:isolate}
 .conversation-photo{position:absolute;inset:0;margin:0;z-index:0;overflow:clip}
 .conversation-photo picture{display:block;width:100%;height:100%}

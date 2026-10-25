@@ -33,9 +33,9 @@ function update(){
  const rect=workshop.getBoundingClientRect();
  if(rect.bottom>0&&rect.top<innerHeight+150){
   const p=clamp(-rect.top/Math.max(1,workshop.offsetHeight-innerHeight));
-  selectMode(p<.32?'outline':p<.68?'form':'light');
-  model.style.setProperty('--model-angle',`${-40+p*65}deg`);
-  model.style.setProperty('--assembly-lift',Math.max(0,1-p/.55));
+  selectMode(p<.20?'outline':p<.55?'form':'light');
+  model.style.setProperty('--model-angle',`${-40+p*75}deg`);
+  model.style.setProperty('--assembly-lift',Math.max(0,1-p/.42));
  }
  const mr=map.getBoundingClientRect();if(mr.bottom>0&&mr.top<innerHeight+100){const p=clamp((innerHeight-mr.top)/(innerHeight*.8));map.style.setProperty('--connection-offset',1-p);map.style.setProperty('--connection-opacity',.3+p*.7)}
  const playSec=document.querySelector('.play-section');
@@ -61,7 +61,7 @@ function invalidate(){if(!pending&&!dead&&!document.hidden)pending=requestAnimat
 for(const button of modes)button.addEventListener('click',()=>{
  const mode=button.dataset.modelMode;selectMode(mode);
  if(isStatic())return;
- const p={outline:.15,form:.5,light:.85}[mode];
+ const p={outline:.08,form:.36,light:.72}[mode];
  scrollTo({top:scrollY+workshop.getBoundingClientRect().top+(workshop.offsetHeight-innerHeight)*p,behavior:'smooth'});
 });
 const playButtons=[...document.querySelectorAll('[data-play]')],playScenes=[...document.querySelectorAll('[data-play-scene]')];

@@ -9,8 +9,8 @@ function update(){
  if(isStatic()){network.inert=false;panel.inert=false;network.removeAttribute('aria-hidden');panel.removeAttribute('aria-hidden');return}
  const r=room.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight+100)return;
  const p=clamp(-r.top/Math.max(1,room.offsetHeight-innerHeight));
- const wipe=smooth(ramp(p,.40,.62)),first=1-smooth(ramp(p,.38,.47)),second=smooth(ramp(p,.61,.71));
- const active=p>=.55;
+ const wipe=smooth(ramp(p,.20,.52)),first=1-smooth(ramp(p,.16,.34)),second=smooth(ramp(p,.42,.58));
+ const active=p>=.36;
  const vars={'--panel-edge':`${(1-wipe)*100}%`,'--room-drift':`${-p*18}px`,'--panel-drift':`${(1-p)*18}px`,'--network-copy':first,'--network-visible':first>.01?'visible':'hidden','--network-y':`${(1-first)*-18}px`,'--panel-copy':second,'--panel-visible':second>.01?'visible':'hidden','--panel-y':`${(1-second)*18}px`,'--room-progress':p,'--room-title-y':`${(1-clamp((innerHeight-r.top)/innerHeight))*22}px`};
  for(const [key,value]of Object.entries(vars))room.style.setProperty(key,value);
  network.inert=first<.01;panel.inert=second<.01;
@@ -20,7 +20,7 @@ function update(){
 function invalidate(){if(!frame&&!dead&&!document.hidden)frame=requestAnimationFrame(update)}
 for(const button of controls)button.addEventListener('click',()=>{
  if(isStatic())return;
- const p=button.dataset.roomBeat==='panel'?.81:.18;
+ const p=button.dataset.roomBeat==='panel'?.70:.10;
  scrollTo({top:scrollY+room.getBoundingClientRect().top+(room.offsetHeight-innerHeight)*p,behavior:'smooth'});
 });
 addEventListener('scroll',invalidate,{passive:true});addEventListener('resize',invalidate);addEventListener('pageshow',invalidate);

@@ -40,15 +40,15 @@ function update(){
   scrollFrame=0;
   const staticMode=isStatic(),r=sequence.getBoundingClientRect();
   const span=Math.max(1,sequence.offsetHeight-innerHeight),p=clamp(-r.top/span);
-  // A small exit margin avoids restarting at the threshold during tiny reversals.
-  const nextInside=!staticMode&&p>=(inside?.36:.395)&&p<(inside?.71:.68)&&r.bottom>0&&r.top<innerHeight;
+  // Video plays whenever VR sequence is in viewport
+  const nextInside=!staticMode&&r.bottom>0&&r.top<innerHeight&&p<(inside?.88:.84);
   video.controls=staticMode&&!failed;
   const entered=nextInside&&!inside;
   inside=nextInside;
-  body.classList.toggle('vr-film-active',inside);
+  body.classList.toggle('vr-film-active',p>=(inside?.36:.395)&&p<(inside?.71:.68));
   if(entered){userPaused=false;blocked=false;if(video.ended)video.currentTime=0}
   if(!inside)pause();
-  else if(!userPaused&&!video.ended&&!blocked&&video.paused)play();
+  else if(!userPaused&&!blocked&&video.paused)play();
   syncControl();
 }
 function invalidate(){if(!scrollFrame)scrollFrame=requestAnimationFrame(update)}
@@ -57,6 +57,8 @@ control.addEventListener('click',()=>{
   else{userPaused=true;pause()}
 });
 video.addEventListener('loadeddata',()=>{if(!failed){video.hidden=false;control.hidden=false;invalidate()}});
+video.addEventListener('canplay',()=>{if(!failed){video.hidden=false;invalidate()}});
+video.addEventListener('ended',()=>{if(!video.loop){video.currentTime=0;if(inside&&!userPaused)play()}});
 function failFilm(){
   failed=true;video.hidden=true;control.hidden=true;pause();
   const message=document.querySelector('#media-message');message.hidden=false;
@@ -73,3 +75,4 @@ addEventListener('scroll',invalidate,{passive:true});addEventListener('resize',i
 let previousStatic=isStatic();
 new MutationObserver(()=>{const value=isStatic();if(value!==previousStatic){previousStatic=value;invalidate()}}).observe(body,{attributes:true,attributeFilter:['class']});
 syncControl();invalidate();
+if(video.readyState>=1){video.hidden=false;update()}
