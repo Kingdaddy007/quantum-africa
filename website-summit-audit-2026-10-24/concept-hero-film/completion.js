@@ -47,17 +47,11 @@ function update(){
    playSec.style.setProperty('--movie-wipe', ((1-wipe)*100) + '%');
    const active=p>=.50?'movies':'games';
    for(const button of playButtons)button.setAttribute('aria-pressed',String(button.dataset.play===active));
-  }
- }
- const playSec=document.querySelector('.play-section');
- if(playSec){
-  const pr=playSec.getBoundingClientRect();
-  if(pr.bottom>0&&pr.top<innerHeight+100){
-   const p=clamp(-pr.top/Math.max(1,playSec.offsetHeight-innerHeight));
-   const wipe=clamp((p-.35)/.30);
-   playSec.style.setProperty('--movie-wipe', ((1-wipe)*100) + '%');
-   const active=p>=.50?'movies':'games';
-   for(const button of playButtons)button.setAttribute('aria-pressed',String(button.dataset.play===active));
+   for(const scene of playScenes){
+    const isAct=isStatic()||scene.dataset.playScene===active;
+    scene.setAttribute('aria-hidden',String(!isAct));
+    scene.inert=!isAct;
+   }
   }
  }
  const remaining=document.querySelector('main').getBoundingClientRect().bottom;

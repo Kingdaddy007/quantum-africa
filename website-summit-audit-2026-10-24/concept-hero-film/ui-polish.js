@@ -56,6 +56,7 @@ export function initDetailsAccordion() {
 
         const startHeight = `${details.offsetHeight}px`;
         details.open = true;
+        details.style.overflow = 'hidden';
         const endHeight = `${details.scrollHeight}px`;
 
         animation = details.animate({
@@ -68,12 +69,15 @@ export function initDetailsAccordion() {
         animation.onfinish = () => {
           isExpanding = false;
           details.style.height = '';
+          details.style.overflow = '';
+          details.style.overflow = '';
         };
       } else if (isExpanding || details.open) {
         // Close
         if (isExpanding && animation) animation.cancel();
         isExpanding = false;
         isClosing = true;
+        details.style.overflow = 'hidden';
 
         const startHeight = `${details.scrollHeight}px`;
         const endHeight = `${summary.offsetHeight}px`;
@@ -89,6 +93,7 @@ export function initDetailsAccordion() {
           details.open = false;
           isClosing = false;
           details.style.height = '';
+          details.style.overflow = '';
         };
       }
     });

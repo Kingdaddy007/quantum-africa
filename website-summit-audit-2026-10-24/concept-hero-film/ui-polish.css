@@ -35,7 +35,11 @@
 
 /* Reduced motion & static mode guards */
 .static-mode .masked-heading .line-mask > span,
-body.motion-off .masked-heading .line-mask > span,
+body.motion-off .masked-heading .line-mask > span {
+  transform: none !important;
+  animation: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .masked-heading .line-mask > span {
     transform: none !important;
