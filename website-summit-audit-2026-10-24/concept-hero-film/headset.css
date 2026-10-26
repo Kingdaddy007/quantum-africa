@@ -24,3 +24,10 @@
 .static-mode .vr-playback-actions{margin-top:20px}
 .vr-film-active .study-tools{background:linear-gradient(#080d13ed,#080d13c9)}
 .vr-film-active #replay{display:none}
+
+/* A quiet wayfinding cue, owned by the existing lens entry/exit progress. */
+.vr-scroll-cue{position:absolute;z-index:8;right:max(16px,env(safe-area-inset-right));top:44%;display:flex;flex-direction:column;align-items:center;gap:12px;margin:0;padding:14px 9px;border:1px solid #d9f6f044;border-radius:24px;background:#080d13cc;color:#effbfc;box-shadow:0 2px 16px #0003;pointer-events:none;opacity:var(--inside-opacity,0);visibility:var(--inside-visible,hidden)}
+.vr-scroll-cue>span:first-child{writing-mode:vertical-rl;font-size:11px;font-weight:600;letter-spacing:.08em;line-height:1.2}
+.vr-scroll-cue>span:last-child{font-size:18px;line-height:1}
+.static-mode .vr-scroll-cue{display:none}
+@media(max-width:760px){.vr-scroll-cue{right:max(12px,env(safe-area-inset-right));top:38%;padding:12px 8px}}
